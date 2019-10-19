@@ -1,0 +1,24 @@
+<%if user_signed_in? %>
+
+<div class="row">
+	<pre> Secret Code : <%= current_user.try(:secret_code).try(:code) %> </pre>
+</div>
+
+<% else %>
+
+	<div class="center jumbotron">
+	  <h3>Secret Code Generator App</h3>
+	  <%= link_to "Sign up now", new_user_registration_path, class: "btn btn-lg btn-success" %><br/>
+	  <p>Already have an account ?
+	  
+	  </p>
+	  <%= link_to "Log in", new_user_session_path, class: "btn btn-lg btn-primary" %>
+	</div>
+
+<% end %>
+
+
+	
+
+
+  

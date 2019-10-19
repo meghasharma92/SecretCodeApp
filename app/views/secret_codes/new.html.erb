@@ -1,0 +1,12 @@
+<h2>Generate New Codes</h2>
+<div class="row">
+  <div class="col-md-3 col-md-offset-3">
+	<%= form_for(@code, url: secret_codes_path, html: { method: :post }) do |f| %>
+
+    <%= f.label :code_number %>&nbsp;&nbsp;(How many ? )<br/>
+    <%= select_tag 'code[code_number]', options_for_select([1,10,20,50,100]), {class: 'form-control'} %>
+
+    <%= f.submit "Generate codes", class: 'btn btn-primary' %>
+	<% end %>
+	</div>
+</div>
